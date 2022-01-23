@@ -57,7 +57,6 @@ int main()
     for (i = 2; i < number+1; ++i)
     {
         lookup_table[i] = lookup_table[i-1] + lookup_table[i-2];
-        cout << " " << lookup_table[i] << endl;
     }
     cout << "\nFibonnaci number is : " << lookup_table[number] << endl;
     clock_gettime(CLOCK_REALTIME, &end);

@@ -6,16 +6,16 @@
 
 using namespace std;
  
-void sMatMultiply(double mat1[][N],
-              double mat2[][N],
-              double res[][N])
+void sMatMultiply(double matrix1[][N],
+              double matrix2[][N],
+              double resultMat[][N])
 {
     int i, j, k;
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
-            res[i][j] = 0;
+            resultMat[i][j] = 0;
             for (k = 0; k < N; k++)
-                res[i][j] += mat1[i][k] * mat2[k][j];
+                resultMat[i][j] += matrix1[i][k] * matrix2[k][j];
         }
     }
 }

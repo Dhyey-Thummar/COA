@@ -1,10 +1,9 @@
-
 import time
 import numpy
 
 n = int(input("Enter the size of matrix: "))
 
-start = numpy.longlong(time.clock_gettime_ns())
+start = numpy.longlong(time.time_ns())
 
 A = numpy.random.randint(size=(n,n))
 B = numpy.random.randint(size=(n,n))

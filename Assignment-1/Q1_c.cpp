@@ -53,10 +53,11 @@ int main()
 {
     init();
     timespec start, end;
-    clock_gettime(CLOCK_REALTIME, &start);
+    
     int x;
     cout << "Enter the number of terms of series : ";
     cin >> x;
+    clock_gettime(CLOCK_REALTIME, &start);
     cout << "\nFibonnaci number is : " << fib_mem(x) << endl;
     clock_gettime(CLOCK_REALTIME, &end);
     long long seconds = end.tv_sec - start.tv_sec;
