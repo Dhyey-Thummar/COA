@@ -53,14 +53,14 @@ int main()
 {
     init();
     timespec start, end;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start);
+    clock_gettime(CLOCK_REALTIME, &start);
     int x;
     cout << "Enter the number of terms of series : ";
     cin >> x;
     cout << "\nFibonnaci number is : " << fib_mem(x) << endl;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
-    //long seconds = end.tv_sec - start.tv_sec;
+    clock_gettime(CLOCK_REALTIME, &end);
+    long long seconds = end.tv_sec - start.tv_sec;
     long long nanoseconds = end.tv_nsec - start.tv_nsec;
-    //double elapsed = seconds + nanoseconds*1e-9;
-    cout<<"\nTime taken: "<<nanoseconds<<" nanoseconds\n";
+    long double elapsed = seconds + nanoseconds*(long double)1e-9;
+    cout<<"\nTime taken: "<<elapsed<<" seconds\n";
 }

@@ -52,7 +52,7 @@ int main()
     cout << "Enter the number of terms of series : ";
     cin >> number;
     timespec start, end;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start);
+    clock_gettime(CLOCK_REALTIME, &start);
 
     for (i = 2; i < number+1; ++i)
     {
@@ -60,10 +60,10 @@ int main()
         cout << " " << lookup_table[i] << endl;
     }
     cout << "\nFibonnaci number is : " << lookup_table[number] << endl;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
-    //long seconds = end.tv_sec - start.tv_sec;
+    clock_gettime(CLOCK_REALTIME, &end);
+    long long seconds = end.tv_sec - start.tv_sec;
     long long nanoseconds = end.tv_nsec - start.tv_nsec;
-    //double elapsed = seconds + nanoseconds * 1e-9;
-    cout << "\nTime taken: " << nanoseconds << " nanoseconds\n";
+    long double elapsed = seconds + nanoseconds*(long double)1e-9;
+    cout<<"\nTime taken: "<<elapsed<<" seconds\n";
     return 0;
 }
