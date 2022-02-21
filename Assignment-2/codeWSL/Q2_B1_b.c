@@ -1,11 +1,9 @@
-#include <iostream>
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctime>
-#define N 32
+#include <time.h>
+#define N 64
 
-using namespace std;
- 
 void sMatMultiply(int matrix1[][N],
               int matrix2[][N],
               int resultMat[][N])
@@ -37,7 +35,7 @@ int main()
             matrix2[i][j] = rand()%10;
         }
     }
-    timespec start, end;
+    struct timespec start, end;
     clock_gettime(CLOCK_REALTIME, &start);
 
     sMatMultiply(matrix1, matrix2, resultMat);
@@ -55,6 +53,6 @@ int main()
     //     cout << "\n";
     // }
 
-    cout<<"\nTime taken just for multiplication: "<<elapsed<<" seconds\n";
+    printf("\nTime taken just for multiplication: %Lf seconds\n", elapsed);
     return 0;
 }
